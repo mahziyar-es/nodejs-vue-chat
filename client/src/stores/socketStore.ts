@@ -7,7 +7,7 @@ const connected = ref(false)
 
 
 const connect = async () => {
-    socket.value = io('http://127.0.0.1:3000/chat',{
+    socket.value = io(import.meta.env.VITE_BASE_SOCKET_URL,{
         transports: ["websocket"],
         // query:{
         //     chat_ids:  chatIds.join(",")

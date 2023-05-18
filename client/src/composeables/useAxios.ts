@@ -8,7 +8,7 @@ const useAxios = () => {
     const router = useRouter()
 
     const axiosInstance = axios.create({
-        baseURL: 'http://127.0.0.1:3000/api/',
+        baseURL: import.meta.env.VITE_BASE_API_URL,
         withCredentials: true,
     })
 
