@@ -13,3 +13,24 @@ A simple chat web application using vue, node, express, socket.io and mongodb.
 - `axios`
 - `socket.io-client`
 
+
+## usage
+
+clone the repo
+```
+git clone https://github.com/mahziyar-es/nodejs-vue-chat.git
+```
+
+client
+```
+cd client
+npm install
+```
+modify .env file based on your needs
+
+server
+```
+cd server
+npm install
+```
+create and modify .env file from .env.example based on your needs
