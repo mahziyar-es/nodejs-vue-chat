@@ -3,7 +3,7 @@ const { generateJWT } = require('../utils/helpers')
 const bcrypt = require('bcrypt')
 const expressAsyncHandler = require('express-async-handler')
 const User = require('../models/User')
-const ErrorMessageException = require('../exceptions/errorMessageException')
+const ErrorMessageException = require('../exceptions/ErrorMessageException')
 
 
 // =====================================================================================================

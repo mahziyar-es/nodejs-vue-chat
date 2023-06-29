@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt')
 const expressAsyncHandler = require('express-async-handler')
 const User = require('../models/User')
 const ChatUser = require('../models/ChatUser')
-const ErrorMessageException = require('../exceptions/errorMessageException')
+const ErrorMessageException = require('../exceptions/ErrorMessageException')
 const Block = require('../models/Block')
 
 

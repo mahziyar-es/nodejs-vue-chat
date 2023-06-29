@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 const path = require('path')
 const fs = require('fs')
 const fsp = require('fs').promises
-const ErrorMessageException = require('../exceptions/errorMessageException')
+const ErrorMessageException = require('../exceptions/ErrorMessageException')
 require('dotenv').config()
 var imageMagic = require('imagemagick');
 

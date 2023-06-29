@@ -7,7 +7,7 @@ const User = require('../models/User')
 const ChatUser = require('../models/ChatUser')
 const Chat = require('../models/Chat')
 const ChatMessage = require('../models/ChatMessage')
-const ErrorMessageException = require('../exceptions/errorMessageException')
+const ErrorMessageException = require('../exceptions/ErrorMessageException')
 const {getUserDeletedMessageIds} = require('./messageController')
 
 
