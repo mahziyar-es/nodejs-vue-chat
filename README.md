@@ -26,11 +26,11 @@ client
 cd client
 npm install
 ```
-modify .env file based on your needs
+create a .env.local file based on .env file and modify it according to your needs
 
 server
 ```
 cd server
 npm install
 ```
-create and modify .env file from .env.example based on your needs
+create a .env.local file based on .env file and modify it according to your needs
