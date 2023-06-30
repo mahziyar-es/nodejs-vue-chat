@@ -5,7 +5,7 @@ const path = require('path')
 const fs = require('fs')
 const fsp = require('fs').promises
 const ErrorMessageException = require('../exceptions/ErrorMessageException')
-require('dotenv').config()
+require('./dotenv')
 var imageMagic = require('imagemagick');
 
 

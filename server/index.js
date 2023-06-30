@@ -1,4 +1,4 @@
-require('dotenv').config({path: '.env.local'})
+require('./utils/dotenv')
 const express = require('express')
 const app = express()
 const http = require('http')
