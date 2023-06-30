@@ -25,7 +25,7 @@ const seed = async() => {
 
     for (let i = 1; i <= 10; i++){
         const user = new User({
-            [constants.COL_USER_USERNAME]: `gamon${i}`, 
+            [constants.COL_USER_USERNAME]: `user${i}`, 
             [constants.COL_USER_PASSWORD]: await bcrypt.hash('123456', 5), 
             [constants.COL_USER_IMAGE]: 'ph.png', 
             [constants.COL_USER_ACTIVE]: true, 

@@ -1,0 +1,23 @@
+version: '3'
+services:
+  client:
+    build:
+      dockerfile: ./client/Dockerfile
+    ports:
+      - '3001:80'
+    restart: always
+    depends_on:
+      - server
+  server:
+    build:
+      dockerfile: ./server/Dockerfile
+    restart: always
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:4.4.6
+    restart: always
+    ports:
+      - '27017:27017'
