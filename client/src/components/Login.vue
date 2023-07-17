@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import {inject, ref} from 'vue'
+    import {computed, inject, ref} from 'vue'
     import {useRouter} from 'vue-router'
     import {Gamon} from 'gamon-vue'
     import useAxios from '../composeables/useAxios'
@@ -13,6 +13,9 @@
     const loading = ref(false)
 
 
+    const buttonDisabled = computed(()=>{
+        return !(username.value && password.value)
+    })
 
     const login = ()=>{
 
@@ -50,6 +53,6 @@
     <form @submit.prevent="login()" class="width-100 display-flex flex-column align-items-center justify-content-center">
         <InputBasic v-model="username" placeholder="Username" class="margin-top-3" />
         <InputBasic v-model="password" placeholder="Password" type="password" class="margin-top-3" />
-        <Button type="submit" text="Login" class="margin-0 margin-top-5 background-primary" :loading="loading"  />
+        <Button type="submit" text="Login" class="margin-0 margin-top-5 background-primary" :loading="loading" :disabled="buttonDisabled" />
     </form>
 </template>

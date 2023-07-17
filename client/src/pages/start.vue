@@ -28,7 +28,7 @@
 
 
 <template>
-    <div class="landing display-flex flex-column align-items-center justify-content-center padding-4 height-screen">
+    <div class="landing display-flex flex-column align-items-center  padding-4 height-screen">
 
 
         <div class="landing__name text-primary display-flex align-items-center">
@@ -36,8 +36,8 @@
             <div>chat</div>
         </div>
 
-        <div class="flex-fill width-100 display-flex  align-items-center justify-content-center">
-            <div v-if="!tab" class="landing__motto  text-primary flex-column display-flex flex-wrap justify-content-center margin-top-6">
+        <div class="flex-fill width-100 display-flex  align-items-center ">
+            <div v-if="!tab" class="landing__motto  text-primary flex-column display-flex flex-wrap justify-content-center margin-auto">
                 <div class="display-flex align-items-center justify-content-center flex-wrap">
                     <div class="landing__motto__animated landing__motto__animated--type1 text-secondary "> Simple </div>
                     <div class="landing__motto__animated landing__motto__animated--type3 margin-start-2 margin-end-2"> and </div>
@@ -49,7 +49,7 @@
             </div>
 
 
-            <Row v-if="tab" class="width-100 overflow-hidden display-flex align-items-center justify-content-center padding-3">
+            <Row v-if="tab" class="width-100 overflow-hidden display-flex align-items-center justify-content-center  padding-3">
                 <Col width="lg-5 md-6 display-flex  position-relative">
                     <div class="width-100 display-flex register-form-container flex-column align-items-center justify-content-center">
                         <div  :class="['width-100', tab == 'login' ? 'toggle-animation--show' : 'toggle-animation--hide' ]">
