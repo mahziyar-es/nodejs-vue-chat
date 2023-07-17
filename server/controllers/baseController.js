@@ -1,5 +1,5 @@
 const constants = require('../utils/constants')
-const { responseSuccess } = require('../utils/helpers')
+const { responseSuccess, authCheck } = require('../utils/helpers')
 const expressAsyncHandler = require('express-async-handler')
 const User = require('../models/User')
 const ChatUser = require('../models/ChatUser')
@@ -10,7 +10,17 @@ const ErrorMessageException = require('../exceptions/ErrorMessageException')
 
 // =====================================================================================================
 const start = expressAsyncHandler(async (req, res) => {
+    let user
+
+    try{
+        const decoded = await authCheck(req)
+        user = await User.findById(decoded.id).select(`-${constants.COL_USER_PASSWORD}`)
+    }
+    catch{
+    }
+
     responseSuccess(res, 'success', {
+        user : user,
         version : 1,
     })
 })

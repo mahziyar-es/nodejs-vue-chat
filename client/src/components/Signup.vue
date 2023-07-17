@@ -83,12 +83,12 @@
         <InputBasic v-model="password" placeholder="Password" type="password" class="margin-top-3" passwordVisibilityToggler />
         <InputBasic v-model="passwordRetype" placeholder="Confirm password" type="password" class="margin-top-3" passwordVisibilityToggler />
 
-        <div class="display-flex align-items-start flex-column width-100 margin-top-3 font-size-14px">
-            <span :class="passwordValidation.containsNumber? 'text-green' : 'text-red' ">- Password must contain atleast one number</span>
+        <div class="display-flex align-items-start flex-column width-100 margin-top-3 font-size-14px ">
+            <span :class="passwordValidation.containsNumber? 'text-green' : 'text-red' ">- Password must contain at least one number</span>
             <span :class="passwordValidation.containsLowerCase? 'text-green' : 'text-red' ">- Password must contain lower case character</span>
             <span :class="passwordValidation.containsUpperCase? 'text-green' : 'text-red' ">- Password must contain upper case character</span>
-            <span :class="passwordValidation.containsSpecialChar? 'text-green' : 'text-red' ">- Password must contain atleast one special character</span>
-            <span :class="passwordValidation.propperlength? 'text-green' : 'text-red' ">- Password must be atleast 8 characters</span>
+            <span :class="passwordValidation.containsSpecialChar? 'text-green' : 'text-red' ">- Password must contain at least one special character</span>
+            <span :class="passwordValidation.propperlength? 'text-green' : 'text-red' ">- Password must be at least 8 characters</span>
         </div>
 
         <Button text="Signup" class="margin-0 margin-top-5 background-primary" :disabled="signupButtonDisabled" type="submit" />

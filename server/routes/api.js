@@ -1,7 +1,5 @@
 const express = require('express')
-const path = require('path')
 const router = express.Router()
-const {responseSuccess, responseError} = require('../utils/helpers')
 const baseController = require('../controllers/baseController')
 const authController = require('../controllers/authController')
 const userController = require('../controllers/userController')
@@ -11,14 +9,15 @@ const apiTokenAuth = require('../middlewares/apiTokenAuth')
 //==========================================================================================================
 
 
+router.get('/start', baseController.start)
 
 router.post('/login', authController.login)
 router.post('/signup', authController.signup)
 
 router.use(apiTokenAuth)
+
 router.post('/logout', authController.logout)
 
-router.get('/start', baseController.start)
 router.get('/search', baseController.search)
 
 router.get('/chats', chatController.chats)

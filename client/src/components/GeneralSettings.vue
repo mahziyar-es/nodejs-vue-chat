@@ -13,7 +13,7 @@
             axios.post('logout')
             .then(res=>{
                 socketStore.disconnect()
-                window.location.replace('/register')
+                window.location.replace('/')
             })
         })
     }

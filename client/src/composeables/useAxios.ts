@@ -28,7 +28,7 @@ const useAxios = () => {
         if (errorMessage) Gamon.notify(errorMessage, 'error')
 
         if (error.response && error.response.status && error.response.status == 401) {
-            router.replace('register')
+            router.replace('/')
         }
         
         return Promise.reject(error);

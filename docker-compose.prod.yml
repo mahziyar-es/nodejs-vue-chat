@@ -9,17 +9,28 @@ services:
     restart: always
     depends_on:
       - server
+    networks:
+      - custom
+    env_file: ./client/.env.local
   server:
     build:
       context: ./server
       dockerfile: Dockerfile.prod
     restart: always
-    ports:
-      - '3000:3000'
     depends_on:
       - mongo
+    networks:
+      - custom
+    ports:
+      - '3000:3000'
+    env_file: ./server/.env.local
   mongo:
     image: mongo:4.4.6
     restart: always
     ports:
       - '27017:27017'
+    networks:
+      - custom
+
+networks:
+  custom:

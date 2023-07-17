@@ -6,7 +6,6 @@ const fs = require('fs')
 const fsp = require('fs').promises
 const ErrorMessageException = require('../exceptions/ErrorMessageException')
 require('./dotenv')
-var imageMagic = require('imagemagick');
 
 
 
@@ -40,6 +39,19 @@ const verifyJWT = (jwt, key = '') => {
 }
 
 
+const authCheck = async (req)=>{
+    if (!req.cookies || !req.cookies.access_token) throw new ErrorMessageException('authentication error')
+    
+    const accessToken = req.cookies.access_token
+
+    if (!accessToken) throw new ErrorMessageException('authentication error')
+
+    return jwt.verify(accessToken, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) throw new ErrorMessageException('authentication error')
+        if (!decoded.id) throw new ErrorMessageException('authentication error')
+        return decoded
+    })
+}
 
 
 const requestLogger = (req, res, next) => {
@@ -215,6 +227,7 @@ module.exports = {
     errorLogger,
     generateJWT,
     verifyJWT,
+    authCheck,
     getCookieValue,
     currentDate,
     currentTime,

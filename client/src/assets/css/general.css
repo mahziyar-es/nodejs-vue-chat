@@ -30,6 +30,9 @@ input:focus{
 .text-secondary{
     color:  var(--theme-secondary) !important;
 }
+.text-white{
+    color:white !important;
+}
 
 .border-primary{
     border-color:  var(--theme-primary) !important;
@@ -43,7 +46,9 @@ input:focus{
 .border-0{
     border:none
 }
-
+.height-screen{
+    height: 100vh;
+}
 
 html,body{
     margin: 0;
@@ -83,14 +88,14 @@ a{
 
 .toggle-animation--show{
     transition: all 0.5s;
-    transform: translateY(50px);
+    transform: translateY(1.1);
     opacity: 1;
     position: absolute;
     z-index: 100;
 }
 .toggle-animation--hide{
     transition: all 0.5s;
-    transform: translateY(-50px);
+    transform: scale(1.1);
     opacity: 0;
     position: absolute;
 }
@@ -205,4 +210,59 @@ a{
     border-radius: 50%;
     bottom: 0px;
     left: 15px;
+}
+
+
+
+
+
+
+.landing__name{
+    font-size:50px; 
+    font-weight:900;
+}
+
+.landing__motto{
+    text-shadow:1px 1px 2px gray;
+    font-size: 50px;
+    font-weight: 900;
+}
+.landing__motto__animated{
+    visibility: hidden;
+    animation: landingA 1s;
+    animation-fill-mode: forwards;
+}
+
+.landing__motto__animated--type1{
+    animation-delay: 1s;
+}
+.landing__motto__animated--type2{
+    animation-delay: 1.5s;
+}
+.landing__motto__animated--type3{
+    animation-delay: 2s;
+}
+
+
+@keyframes landingA {
+    0% {opacity: 0;}
+    100% {visibility: visible;opacity: 1;}
+}
+
+
+.landing {
+    background: url('bg.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 600px) {
+    .landing__motto {
+      font-size: 35px;
+    }
+}
+
+
+.gamon-input__icon-container{
+    background: #ffffff7d;
 }
