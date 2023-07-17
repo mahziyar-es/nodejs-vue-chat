@@ -28,7 +28,7 @@
 
 
 <template>
-    <div class="landing display-flex flex-column align-items-center  padding-4 height-screen">
+    <div class="landing display-flex flex-column align-items-center  padding-4 height-screen overflow-hidden">
 
 
         <div class="landing__name text-primary display-flex align-items-center">
