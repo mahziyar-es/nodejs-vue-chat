@@ -50,7 +50,7 @@
 
 
             <Row v-if="tab" class="width-100 overflow-hidden display-flex align-items-center justify-content-center  padding-3">
-                <Col width="lg-5 md-6 display-flex  position-relative">
+                <Col width="lg-4 md-6 display-flex  position-relative">
                     <div class="width-100 display-flex register-form-container flex-column align-items-center justify-content-center">
                         <div  :class="['width-100', tab == 'login' ? 'toggle-animation--show' : 'toggle-animation--hide' ]">
                             <Login  />
